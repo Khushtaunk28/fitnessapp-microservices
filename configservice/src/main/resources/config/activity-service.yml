@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: activity-service
+  data:
+    mongodb:
+      uri: mongodb+srv://ktaunk28:qwerty123@cluster0.dim29.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: activitydb
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
+server:
+  port: 8081
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
+      register-with-eureka: true
+      fetch-registry: true
+
+gemini:
+  api:
+    url: ${GEMINI_API_URL}
+    key: ${GEMINI_API_KEY}

@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ai-service
+  data:
+    mongodb:
+      uri: mongodb+srv://ktaunk28:qwerty123@cluster0.dim29.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: ai-database
+server:
+  port: 8083
+
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka
+        register-with-eureka: true
+        fetch-registry: true
+
+rabbitmq:
+  exchange:
+    name: fitness.exchange
+  queue:
+    name: activity.queue
+  routing:
+    key: activity.tracking
+
+
