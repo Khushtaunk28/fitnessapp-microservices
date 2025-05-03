@@ -3,7 +3,7 @@ spring:
     name: ai-service
   data:
     mongodb:
-      uri: mongodb+srv://ktaunk28:qwerty123@cluster0.dim29.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      uri: ${MONGODB_URI}
       database: ai-database
 server:
   port: 8083
@@ -22,5 +22,11 @@ rabbitmq:
     name: activity.queue
   routing:
     key: activity.tracking
+
+gemini:
+  api:
+    url: ${GEMINI_API_URL}
+    key: ${GEMINI_API_KEY}
+
 
 
