@@ -1,6 +1,4 @@
 package com.fitnessapp.userservice.service;
-
-import com.fitnessapp.userservice.Jwt.JwtUtil;
 import com.fitnessapp.userservice.dto.RegisterRequest;
 import com.fitnessapp.userservice.dto.UserResponse;
 import com.fitnessapp.userservice.entity.User;
@@ -16,8 +14,6 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    @Autowired
-    private JwtUtil jwtUtil;
 
 
     public UserResponse getUserProfile(String userId) {
@@ -45,6 +41,7 @@ public class UserService {
         user.setEmail(registerRequest.getEmail());
         user.setPassword(registerRequest.getPassword());
         User savedUser = userRepo.save(user);
+
         UserResponse userResponse = new UserResponse();
         userResponse.setId(savedUser.getId());
         userResponse.setEmail(savedUser.getEmail());
@@ -53,8 +50,6 @@ public class UserService {
         userResponse.setPassword(savedUser.getPassword());
         userResponse.setCreatedAt(savedUser.getCreated());
         userResponse.setUpdatedAt(savedUser.getModified());
-
-        String token=jwtUtil.generateToken(user.getEmail())
         return userResponse;
     }
 
