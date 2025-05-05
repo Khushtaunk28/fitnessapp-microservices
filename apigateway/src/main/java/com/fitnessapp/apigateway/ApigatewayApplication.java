@@ -1,4 +1,4 @@
-package com.ftinessapp.apigateway;
+package com.fitnessapp.apigateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

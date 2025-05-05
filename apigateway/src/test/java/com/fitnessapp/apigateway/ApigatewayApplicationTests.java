@@ -1,4 +1,4 @@
-package com.ftinessapp.apigateway;
+package com.fitnessapp.apigateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

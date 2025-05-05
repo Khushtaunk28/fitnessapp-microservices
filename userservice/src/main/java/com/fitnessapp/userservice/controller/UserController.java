@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
 
-
     private UserService userService;
 
     //get by userid
@@ -26,11 +25,10 @@ public class UserController {
 
     }
 
-
-
     //register
     @PostMapping("/register")
     public ResponseEntity<UserResponse> registerUser(@Valid @RequestBody RegisterRequest registerRequest) {
+
         return ResponseEntity.ok(userService.registerUser(registerRequest));
     }
 
